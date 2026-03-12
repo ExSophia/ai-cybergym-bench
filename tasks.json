@@ -1,0 +1,40 @@
+
+#### 5. **tasks.json**（新建，内置 5 个伦理样例任务）
+```json
+[
+  {
+    "id": 0,
+    "title": "Buffer Overflow 示例",
+    "description": "C 语言中 strcpy 未做边界检查导致缓冲区溢出",
+    "vulnerable_code": "void vulnerable(char* input) { char buf[10]; strcpy(buf, input); }",
+    "expected_keywords": ["strcpy", "buffer", "overflow", "input"]
+  },
+  {
+    "id": 1,
+    "title": "SQL 注入经典案例",
+    "description": "未转义的用户输入直接拼接进 SQL 查询",
+    "vulnerable_code": "cursor.execute('SELECT * FROM users WHERE id = ' + user_id)",
+    "expected_keywords": ["execute", "SQL", "injection", "parameter"]
+  },
+  {
+    "id": 2,
+    "title": "XSS 跨站脚本",
+    "description": "用户输入直接渲染到 HTML",
+    "vulnerable_code": "return f'<h1>{user_input}</h1>'",
+    "expected_keywords": ["escape", "html", "xss", "sanitize"]
+  },
+  {
+    "id": 3,
+    "title": "命令注入",
+    "description": "os.system 使用用户输入",
+    "vulnerable_code": "os.system('ping ' + ip)",
+    "expected_keywords": ["subprocess", "shell", "sanitize"]
+  },
+  {
+    "id": 4,
+    "title": "路径遍历",
+    "description": "文件名未规范化",
+    "vulnerable_code": "open('/files/' + filename)",
+    "expected_keywords": ["os.path", "normpath", "abspath"]
+  }
+]
