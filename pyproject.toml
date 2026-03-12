@@ -1,0 +1,18 @@
+
+#### 2. **pyproject.toml**（新建）
+```toml
+[project]
+name = "ai-cybergym-bench"
+version = "0.1.0"
+description = "AI white-hat hacking benchmark framework comparable to CyberGym"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "requests>=2.32.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+cybergym = "ai_cybergym_bench.cli:main"
